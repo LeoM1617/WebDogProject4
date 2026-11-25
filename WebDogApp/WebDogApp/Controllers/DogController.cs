@@ -22,9 +22,9 @@ namespace WebDogApp.Controllers
         }
 
         // GET: DogController
-        public IActionResult Index(string searchStringBreed, string searchStringName)
+        public IActionResult Index(string searchStringBreed, string searchStringName, string searchIntAge)
         {
-            List<IndexVM> dogs = _dogService.GetDogs(searchStringBreed, searchStringName)
+            List<IndexVM> dogs = _dogService.GetDogs(searchStringBreed, searchStringName, searchIntAge)
                 .Select(item => new IndexVM
                 {
                     Id = item.Id,
